@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import './App.css'
 import { ContactInfo } from './components/ContactInfo/ContactInfo'
 import { Header } from './components/Header/Header'
+import { Navigation } from './components/Navigation/Navigation';
 
 export const App = () => {
+  const [activeSection, setActiveSection] = useState("experiencie");
+
 
   const personalInfo = {
     fullNme: "Laura Gavilán Sabiote",
@@ -27,6 +31,8 @@ export const App = () => {
           location={personalInfo.location}
           email={personalInfo.email}
           phone={personalInfo.phone} />
+
+          <Navigation onSection={setActiveSection} />
       </div>
     </>
   );
