@@ -7,7 +7,7 @@ export const App = () => {
   const personalInfo = {
     fullNme: "Laura Gavilán Sabiote",
     position: "Fronted Developer",
-    summary: "Fronted Developer con expriencia en React, HTML, CSS y JavaScript",
+    summary: "Fronted Developer con experiencia en React, HTML, CSS y JavaScript",
     location: "Madrid",
     email: "Lauragavilansabiote@hotmail.com",
     phone: 649846617,
