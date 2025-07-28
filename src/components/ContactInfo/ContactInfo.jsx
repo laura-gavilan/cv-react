@@ -1,3 +1,5 @@
+import "./ContactInfo.css"
+
 export const ContactInfo = ({ summary, location, email, phone }) => {
     return (
         <div className="contact-info">
