@@ -4,9 +4,12 @@ import { ContactInfo } from './components/ContactInfo/ContactInfo'
 import { Header } from './components/Header/Header'
 import { Navigation } from './components/Navigation/Navigation';
 import { Experience } from './components/Sections/Experience';
+import { Education } from './components/Sections/Education';
+import { Skills } from './components/Sections/Skills';
+import { Languages } from './components/Sections/Languages';
 
 export const App = () => {
-  const [activeSection, setActiveSection] = useState(null);
+  const [activeSection, setActiveSection] = useState("experience");
 
 
   const personalInfo = {
@@ -18,7 +21,10 @@ export const App = () => {
   };
 
   const sections = {
-    experience: <Experience />
+    experience: <Experience />,
+    education: <Education/>,
+    skills: <Skills/>,
+    languages: <Languages/>
   };
 
 
