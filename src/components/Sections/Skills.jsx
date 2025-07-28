@@ -10,6 +10,8 @@ export const Skills = () => {
             <img src="./src/media/images/js.png" alt="icono de JS" />
 
             <img src="./src/media/images/react.png" alt="icono de React" />
+
+            <img src="./src/media/images/vscode.png" alt="icono de Visual Studio Code" />
             
         </section>
     )
