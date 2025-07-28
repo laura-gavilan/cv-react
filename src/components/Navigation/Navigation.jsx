@@ -5,18 +5,16 @@ const sections = [
     { id: "languages", label: "Idiomas"},
 ];
 
-export const Navigation = ({ onSection }) => {
-    sections
-
+export const Navigation = ({ onSection, activeSection }) => {
     return (
         <nav className="nav">
             <ul>
                 {sections.map((section) => {
-                    return (<li key={section.id}>
+                    return <li key={section.id}>
                         <button onClick={() => onSection(section.id)}>
                             {section.label}
                         </button>
-                    </li>)
+                    </li>
                 })}
             </ul>
         </nav>
