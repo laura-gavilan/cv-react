@@ -8,25 +8,50 @@ import { Education } from './components/Sections/Education';
 import { Skills } from './components/Sections/Skills';
 import { Languages } from './components/Sections/Languages';
 
+
 export const App = () => {
   const [activeSection, setActiveSection] = useState("experience");
 
 
   const personalInfo = {
     fullNme: "Laura Gavilán Sabiote",
-    position: "Fronted Developer con experiencia en React, HTML, CSS y JavaScript",
-    location: "Madrid",
+    position: "Fronted Developer",
+    location: "Localización: Madrid",
     email: "Lauragavilansabiote@hotmail.com",
     phone: 649846617,
+    summary: "Fronted Developer con experiencia en React"
   };
 
   const sections = {
     experience: <Experience />,
-    education: <Education/>,
-    skills: <Skills/>,
-    languages: <Languages/>
-  };
+    education: (
+      <Education
+        degree="Máster en programación + Inteligencia Artificial"
+        modality="Modalidad Online"
+        period="Junio 2024 - Actualidad"
+        details={[
+          "Lenguajes y frameworks: Javascript",
+          "Desarrollo de aplicaciones web con HTML, CSS, Javascript, React",
+          "proyecto de web personal"
+        ]}
+      />
+    ),
+    skills: <Skills />,
+    languages: (
+      <Languages
+        languages={[
+          {
+            name: "Español",
+            level: "Nativo"
+          },
 
+          {
+            name: "Inglés",
+            level: "B1",
+            institution: "Trinity College"
+          }
+        ]} />)
+  };
 
 
   return (
@@ -40,14 +65,30 @@ export const App = () => {
           <ContactInfo
             location={personalInfo.location}
             email={personalInfo.email}
-            phone={personalInfo.phone} />
+            phone={personalInfo.phone}
+            summary={personalInfo.summary} />
         </div>
 
-        <Navigation 
-          onSection={(id) => setActiveSection(prev => prev === id ? null : id)}
+        <Navigation
+          onSection={(id) => setActiveSection(id)}
           activeSection={activeSection} />
 
-        {activeSection && sections[activeSection]}
+        {sections[activeSection]}
+
+        {/* <Experience />
+
+        <Education
+          degree={Education.degree}
+          modality={Education.modality}
+          period={Education.period}
+          details={Education.details}
+        />
+
+        <Skills />
+
+        <Languages /> */}
+
+
       </div>
     </>
   );

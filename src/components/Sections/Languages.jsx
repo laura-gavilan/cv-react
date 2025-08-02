@@ -1,7 +1,17 @@
-export const Languages = () => {
+export const Languages = ({ languages  = [] }) => {
     return (
-        <section>
-            <p>Inglés B1 </p>
+        <section className="languages">
+            <h2>IDIOMAS</h2>
+            <ul>
+                {languages.map((lang, index) => (
+                    <li key={index}>
+                        {lang.name} - {lang.level}
+                        {lang.institution && (
+                            <div>{lang.institution}</div>
+                        )}
+                    </li>
+                ))}
+            </ul>
         </section>
-    )
-}
+    );
+};
