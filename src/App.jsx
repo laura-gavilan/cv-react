@@ -7,16 +7,17 @@ import { Experience } from './components/Sections/Experience';
 import { Education } from './components/Sections/Education';
 import { Skills } from './components/Sections/Skills';
 import { Languages } from './components/Sections/Languages';
+import { ViewAll } from './components/ViewAll/ViewAll';
 
 
 export const App = () => {
-  const [activeSection, setActiveSection] = useState("experience");
+  const [activeSection, setActiveSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
 
-    useEffect(() => {
-        const savedMode = localStorage.getItem("darkMode");
-        if (savedMode) setDarkMode(JSON.parse(savedMode));
-    }, []);
+    // useEffect(() => {
+    //     const savedMode = localStorage.getItem("darkMode");
+    //     if (savedMode) setDarkMode(JSON.parse(savedMode));
+    // }, []);
 
     const toggleDarkMode = () => {
         setDarkMode(prev => {
@@ -70,7 +71,7 @@ export const App = () => {
 
   return (
     <>
-      <div className={'app-container ${darkMode ? `☀️` : "🌙"'}>
+      <div className={`app-container ${darkMode ? "dark" : "light"}`}>
         <div className='header'>
           <Header
             fullNme={personalInfo.fullNme}
@@ -90,6 +91,8 @@ export const App = () => {
           activeSection={activeSection} />
 
         {sections[activeSection]}
+
+        <ViewAll />
 
         {/* <Experience />
 
