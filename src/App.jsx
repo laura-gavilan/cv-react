@@ -11,6 +11,19 @@ import { Languages } from './components/Sections/Languages';
 
 export const App = () => {
   const [activeSection, setActiveSection] = useState("experience");
+  const [darkMode, setDarkMode] = useState(false);
+
+    useEffect(() => {
+        const savedMode = localStorage.getItem("darkMode");
+        if (savedMode) setDarkMode(JSON.parse(savedMode));
+    }, []);
+
+    const toggleDarkMode = () => {
+        setDarkMode(prev => {
+            localStorage.setItem("darkMode", JSON.stringify(!prev));
+            return !prev;
+        });
+    }
 
 
   const personalInfo = {
@@ -21,6 +34,7 @@ export const App = () => {
     phone: 649846617,
     summary: "Fronted Developer con experiencia en React"
   };
+
 
   const sections = {
     experience: <Experience />,
@@ -56,11 +70,13 @@ export const App = () => {
 
   return (
     <>
-      <div className='app-container'>
+      <div className={'app-container ${darkMode ? `☀️` : "🌙"'}>
         <div className='header'>
           <Header
             fullNme={personalInfo.fullNme}
-            position={personalInfo.position} />
+            position={personalInfo.position}
+            darkMode={darkMode}
+            toggleDarkMode={toggleDarkMode} />
 
           <ContactInfo
             location={personalInfo.location}

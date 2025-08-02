@@ -1,23 +1,9 @@
 import { useEffect, useState } from "react";
 import "./Header.css"
 
-export const Header = ({ fullNme, position}) => {
-    const [darkMode, setDarkMode] = useState(false);
-    
-    // useEffect(() => {
-    //     const savedMode = localStorage.getItem("darkMode");
-    //     if (savedMode) setDarkMode(JSON.parse(savedMode));
-    // }, []);
-
-    const toggleDarkMode = () => {
-        setDarkMode(prev => {
-            localStorage.setItem("darkMode", JSON.stringify(!prev));
-            return !preview;
-        });
-    }
-
+export const Header = ({ fullNme, position, darkMode, toggleDarkMode}) => {
     return (
-            <div className={`header ${darkMode ? "dark" : "light"}`}>                
+            <div className="header">                
                 <h1 className='full-name'>{fullNme}</h1>
 
                 <h2 className='position'>{position}</h2>
