@@ -3,7 +3,7 @@ import "./Header.css"
 
 export const Header = ({ fullNme, position, darkMode, toggleDarkMode}) => {
     return (
-            <div className="header">                
+            <div className="header-container">                
                 <h1 className='full-name'>{fullNme}</h1>
 
                 <h2 className='position'>{position}</h2>

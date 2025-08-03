@@ -14,17 +14,17 @@ export const App = () => {
   const [activeSection, setActiveSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
 
-    // useEffect(() => {
-    //     const savedMode = localStorage.getItem("darkMode");
-    //     if (savedMode) setDarkMode(JSON.parse(savedMode));
-    // }, []);
+  // useEffect(() => {
+  //     const savedMode = localStorage.getItem("darkMode");
+  //     if (savedMode) setDarkMode(JSON.parse(savedMode));
+  // }, []);
 
-    const toggleDarkMode = () => {
-        setDarkMode(prev => {
-            localStorage.setItem("darkMode", JSON.stringify(!prev));
-            return !prev;
-        });
-    }
+  const toggleDarkMode = () => {
+    setDarkMode(prev => {
+      localStorage.setItem("darkMode", JSON.stringify(!prev));
+      return !prev;
+    });
+  }
 
 
   const personalInfo = {
@@ -37,35 +37,29 @@ export const App = () => {
   };
 
 
+  const educationData = {
+    degree:"Máster en programación + Inteligencia Artificial",
+    modality:"Modalidad Aula Virtual",
+    period:"Junio 2024 - Actualidad",
+    details: [
+      "Tecnologías aprendidas: React, JavaScript, HTML, CSS, GitHub",
+      "Desarrollo de proyectos individuales y grupales",
+      "Enfoque en buenas prácticas de código, responsive design y accesibilidad"
+    ]
+  };
+
+  const languagesData = [
+    { name: "Español", level: "Nativo" },
+    { name: "Inglés", level: "B1", institution: "Trinity College" }
+  ];
+
+
   const sections = {
     experience: <Experience />,
-    education: (
-      <Education
-        degree="Máster en programación + Inteligencia Artificial"
-        modality="Modalidad Online"
-        period="Junio 2024 - Actualidad"
-        details={[
-          "Lenguajes y frameworks: Javascript",
-          "Desarrollo de aplicaciones web con HTML, CSS, Javascript, React",
-          "proyecto de web personal"
-        ]}
-      />
-    ),
+    education: <Education {...educationData} />,
     skills: <Skills />,
-    languages: (
-      <Languages
-        languages={[
-          {
-            name: "Español",
-            level: "Nativo"
-          },
-
-          {
-            name: "Inglés",
-            level: "B1",
-            institution: "Trinity College"
-          }
-        ]} />)
+    languages: <Languages languages={languagesData} />
+  
   };
 
 
@@ -92,22 +86,7 @@ export const App = () => {
 
         {sections[activeSection]}
 
-        <ViewAll />
-
-        {/* <Experience />
-
-        <Education
-          degree={Education.degree}
-          modality={Education.modality}
-          period={Education.period}
-          details={Education.details}
-        />
-
-        <Skills />
-
-        <Languages /> */}
-
-
+        <ViewAll education={educationData} languages={languagesData} />
       </div>
     </>
   );

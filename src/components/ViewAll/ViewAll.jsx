@@ -5,7 +5,7 @@ import { Skills } from "../Sections/Skills";
 import { Languages } from "../Sections/Languages";
 
 
-export const ViewAll = () => {
+export const ViewAll = ({ education, languages }) => {
     const [showAll, setShowAll] = useState(false);
 
     const toggleShowAll = () => {
@@ -23,11 +23,16 @@ export const ViewAll = () => {
                     <div className="all-sections">
                         <Experience />
 
-                        <Education />
+                        <Education
+                            degree={education.degree}
+                            modality={education.modality}
+                            period={education.period}
+                            details={education.details}
+                        />
 
                         <Skills />
 
-                        <Languages />
+                        <Languages languages={languages} />
                     </div>
                 )}
             </div>

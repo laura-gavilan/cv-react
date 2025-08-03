@@ -2,6 +2,7 @@ export const Education = ({degree, modality, period, details = [] }) => {
     return (
         <section className="education">
             <div className="education-container">
+                <h1>FORMACIÓN</h1>
                 <h3>{degree}</h3>
                 <p>{modality}</p>
                 <p>{period}</p>

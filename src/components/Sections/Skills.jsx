@@ -8,59 +8,61 @@ import github from "../../media/images/github.png"
 
 export const Skills = () => {
     return (
-        <>
-            <section className="skills-container">
+        <section className="skills-container">
+            <h2 className="skills-title">Hard & Soft Skills</h2>
 
-                <div className="programming-languages">
-                    <h2>Lenguajes de programación</h2>
-                    <div>
-                        <img src={html5} alt="icono de HTML5" />
+            <div className="skills-category">
+                <h3>Lenguajes de programación</h3>
+                <div className="skills-row">
+                    <div className="skill-card">
+                        <img src={html5} alt="HTML5" />
                         <p>HTML5</p>
                     </div>
-
-                    <div>
-                        <img src={css3} alt="icono de CSS" />
-                        <p>CSS</p>
+                    <div className="skill-card">
+                        <img src={css3} alt="CSS3" />
+                        <p>CSS3</p>
                     </div>
-
-                    <div>
-                        <img src={js} alt="icono de JS" />
-                        <p>JAVASCRIPT</p>
+                    <div className="skill-card">
+                        <img src={js} alt="JavaScript" />
+                        <p>JavaScript</p>
                     </div>
                 </div>
+            </div>
 
-                <div className="frameworks">
-                    <h2>Frameworks-librerías</h2>
-                    <div>
-                        <img src={react} alt="icono de React" />
-                        <p>REACT</p>
+            <div className="skills-category">
+                <h3>Frameworks / Librerías</h3>
+                <div className="skills-row">
+                    <div className="skill-card">
+                        <img src={react} alt="React" />
+                        <p>React</p>
                     </div>
                 </div>
+            </div>
 
-
-                <div className="tools">
-                    <h2>Herramientas</h2>
-                    <div>
-                        <img src={vscode} alt="icono de Visual Studio Code" />
+            <div className="skills-category">
+                <h3>Herramientas</h3>
+                <div className="skills-row">
+                    <div className="skill-card">
+                        <img src={vscode} alt="VSCode" />
                         <p>VSCode</p>
                     </div>
-
-                    <div>
-                        <img src={github} alt="icono de GitHub" />
-                        <p>GITHUB</p>
+                    <div className="skill-card">
+                        <img src={github} alt="GitHub" />
+                        <p>GitHub</p>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <section className="softs-skills">
-                <h2>SOFT SKILLS</h2>
-
-                <ul>
+            <div className="skills-category soft-skills">
+                <h3>Soft Skills</h3>
+                <ul className="soft-skills-list">
                     <li>Trabajo en equipo</li>
                     <li>Comunicación efectiva</li>
                     <li>Resolución de problemas</li>
+                    <li>Adaptabilidad</li>
+                    <li>Pensamiento crítico</li>
                 </ul>
-            </section>
-        </>
+            </div>
+        </section>
     );
-};
+}
