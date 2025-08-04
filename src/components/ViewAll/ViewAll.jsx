@@ -1,11 +1,12 @@
 import { useState } from "react"
-import { Experience } from "../Sections/Experience";
-import { Education } from "../Sections/Education";
-import { Skills } from "../Sections/Skills";
-import { Languages } from "../Sections/Languages";
+import { ExperienceSection } from '../ExperienceSection/ExperienceSection';
+import { EducationSection } from "../EducationSection/EducationSection";
+import { SkillsSection } from "../SkillsSection/SkillsSection";
+import { LanguagesSection } from "../LanguagesSection/LanguagesSection";
 
 
-export const ViewAll = ({ education, languages }) => {
+
+export const ViewAll = ({ experience, education, languages }) => {
     const [showAll, setShowAll] = useState(false);
 
     const toggleShowAll = () => {
@@ -21,18 +22,18 @@ export const ViewAll = ({ education, languages }) => {
 
                 {showAll && (
                     <div className="all-sections">
-                        <Experience />
+                        <ExperienceSection experiences={experience} />
 
-                        <Education
+                        <EducationSection
                             degree={education.degree}
                             modality={education.modality}
                             period={education.period}
                             details={education.details}
                         />
 
-                        <Skills />
+                        <SkillsSection />
 
-                        <Languages languages={languages} />
+                        <LanguagesSection languages={languages} />
                     </div>
                 )}
             </div>

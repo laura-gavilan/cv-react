@@ -1,4 +1,6 @@
-export const Education = ({degree, modality, period, details = [] }) => {
+import "./EducationSection.css"
+
+export const EducationSection = ({degree, modality, period, details = [] }) => {
     return (
         <section className="education">
             <div className="education-container">

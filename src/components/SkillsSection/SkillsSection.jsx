@@ -1,4 +1,4 @@
-import "./Sections.css"
+import "./SkillsSection.css"
 import html5 from "../../media/images/html5.png"
 import css3 from "../../media/images/css3.png"
 import js from "../../media/images/js.png"
@@ -6,10 +6,10 @@ import react from "../../media/images/react.png"
 import vscode from "../../media/images/vscode.png"
 import github from "../../media/images/github.png"
 
-export const Skills = () => {
+export const SkillsSection = () => {
     return (
         <section className="skills-container">
-            <h2 className="skills-title">Hard & Soft Skills</h2>
+            <h2 className="skills-title">HARD & SOFT SKILLS</h2>
 
             <div className="skills-category">
                 <h3>Lenguajes de programación</h3>
@@ -54,13 +54,14 @@ export const Skills = () => {
             </div>
 
             <div className="skills-category soft-skills">
-                <h3>Soft Skills</h3>
+                <h3>SOFT SKILLS</h3>
                 <ul className="soft-skills-list">
                     <li>Trabajo en equipo</li>
                     <li>Comunicación efectiva</li>
                     <li>Resolución de problemas</li>
                     <li>Adaptabilidad</li>
-                    <li>Pensamiento crítico</li>
+                    <li>Pensamiento analítico</li>
+                    <li>Planificación</li>
                 </ul>
             </div>
         </section>

@@ -1,4 +1,6 @@
-export const Languages = ({ languages  = [] }) => {
+import "./LanguagesSection.css"
+
+export const LanguagesSection = ({ languages  = [] }) => {
     return (
         <section className="languages">
             <h2>IDIOMAS</h2>
