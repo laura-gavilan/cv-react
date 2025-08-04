@@ -1,25 +1,42 @@
 :root {
-    --primary: #3b82f6;
-    --primary-dark: #2563eb;
-    --bg-light: #f9fafb;
-    --bg-dark: #121212;
-    --text-light: #1f2937;
-    --text-dark: #f3f4f6;
-    --card-light: #ffffff;
-    --card-dark: #1f1f1f;
-    --accent: #e0f2fe;
-    --radius: 12px;
-    --transition: 0.3s ease;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --bg: #f9fafb;
+  --text: #1f2937;
+  --card: #fae9e1;
+  --accent: #fb9b20;
+  --accent-hover: #db8b24;
+  --title: #4f2e04;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+
+.dark {
+  --bg: #000000;
+  --text: #f3f4f6;
+  --card: #1f1f1f;
+  --accent: #ffb347;
+  --accent-hover: #fca311;
+  --title: #ffffff;
+  --shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
 }
 
 body {
-    margin: 0;
-    font-family: "Rubik";
-    background-color: var(--bg-light);
-    color: var(--text-light);
-    transition: background-color var(--transition), color var(--transition);
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Rubik";
+  margin: 0;
+  transition: background-color var(--transition), color var(--transition);
 }
+
+
+.app-container {
+  background-color: var(--bg);
+  color: var(--text);
+  max-width: 100%;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
 
 .dark {
     --bg-light: var(--bg-dark);
@@ -28,16 +45,17 @@ body {
     --accent: #1e3a8a;
 }
 
-/* Contenedor principal */
+
 .app-container {
-    max-width: 960px;
+    max-width: 100%;
     margin: auto;
     padding: 2rem 1rem;
+    background-color: #fae9e152;
 }
 
 /* ================= Header ================= */
 .header-container {
-    background-color: var(--card-light);
+      background-color: var(--card);
     padding: 2rem;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -62,7 +80,7 @@ body {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background-color: var(--primary);
+    background-color: #db8b24;
     color: #fff;
     border: none;
     padding: 0.5rem 0.8rem;
@@ -72,7 +90,7 @@ body {
 }
 
 .mode-toggle-btn:hover {
-    background-color: var(--primary-dark);
+    background-color: #db8b24;
 }
 
 /* ================= ContactInfo ================= */
@@ -81,7 +99,7 @@ body {
     flex-direction: column;
     box-shadow: var(--shadow);
     border-radius: var(--radius);
-    background-color: var(--card-light);
+      background-color: var(--card);
     margin-bottom: 2rem;
 }
 
@@ -94,6 +112,8 @@ body {
 .info-img-summary {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    padding: 10px 20px;
 }
 
 .education-container,
@@ -102,7 +122,7 @@ body {
 .skills-container {
     box-shadow: var(--shadow);
     border-radius: var(--radius);
-    background-color: var(--card-light);
+     background-color: var(--card);
     padding: 8px 12px;
 }
 
@@ -116,7 +136,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
-    background-color: var(--card-light);
+      background-color: var(--card);
     padding: 1rem 1.5rem;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -132,10 +152,11 @@ body {
     gap: 1rem;
 }
 
-.nav button {
+.nav button,
+.view-all-btn {
     background-color: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
+    border: 2px solid #fb9b20;
+    color: #4f2e04;
     padding: 0.5rem 1.2rem;
     border-radius: 999px;
     font-size: 1rem;
@@ -150,17 +171,16 @@ body {
 }
 
 /* ================= Skills ================= */
-/* Contenedor principal */
+
 .skills-container {
-    background-color: var(--card);
+    background-color: #fae9e1;
     padding: 2.5rem;
     border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     margin: 2rem auto;
-    max-width: 1000px;
 }
 
-/* Título general */
+
 .skills-title {
     font-size: 2rem;
     text-align: center;
@@ -169,7 +189,7 @@ body {
     letter-spacing: 0.05em;
 }
 
-/* Categorías de skills */
+
 .skills-category {
     margin-bottom: 2.5rem;
 }
@@ -180,9 +200,10 @@ body {
     color: var(--text);
     border-bottom: 2px solid var(--primary);
     padding-bottom: 0.5rem;
+      background-color: var(--card);
 }
 
-/* Filas de skills */
+
 .skills-row {
     display: flex;
     gap: 1.5rem;
@@ -190,7 +211,7 @@ body {
     justify-content: center;
 }
 
-/* Tarjetas individuales de skill */
+
 .skill-card {
     flex: 1 1 120px;
     max-width: 150px;
@@ -207,7 +228,7 @@ body {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* Icono de tecnología */
+
 .skill-card img {
     width: 60px;
     height: 60px;
@@ -218,7 +239,7 @@ body {
     background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Texto bajo la imagen */
+
 .skill-card p {
     font-size: 1rem;
     font-weight: 600;
@@ -226,7 +247,6 @@ body {
     margin: 0;
 }
 
-/* Soft Skills */
 .soft-skills {
     margin-top: 2rem;
 }
@@ -241,7 +261,7 @@ body {
 }
 
 .soft-skills-list li {
-    background-color: var(--card-light);
+     background-color: var(--card);
     padding: 0.75rem 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
@@ -256,10 +276,10 @@ body {
     background-color: var(--bg);
 }
 
-/* Encabezados globales */
-.skills-container h1, 
-.languages h2, 
-.education h1, 
+
+.skills-container h1,
+.languages h2,
+.education h1,
 .experience-section h2 {
     text-align: center;
     font-size: 2rem;
@@ -271,14 +291,12 @@ body {
 /* ================= Languages ================= */
 
 .languages {
-    
-    background-color: var(--bg);
+
+    background-color: #fae9e1;
     border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
-
-
 
 .languages ul {
     list-style: none;
@@ -300,8 +318,6 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
-
-
 
 .languages li div {
     margin-top: 0.5rem;

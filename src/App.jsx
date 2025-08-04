@@ -21,10 +21,8 @@ export const App = () => {
   // }, []);
 
   const toggleDarkMode = () => {
-    setDarkMode(prev => {
-      localStorage.setItem("darkMode", JSON.stringify(!prev));
-      return !prev;
-    });
+    setDarkMode(prev => !prev);
+      // localStorage.setItem("darkMode", JSON.stringify(!prev));
   };
 
   const toggleShowAll = () => {
