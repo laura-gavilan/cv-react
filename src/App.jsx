@@ -13,6 +13,7 @@ import { ViewAll } from './components/ViewAll/ViewAll';
 export const App = () => {
   const [activeSection, setActiveSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
+  const [showAll, setShowAll] = useState(false);
 
   // useEffect(() => {
   //     const savedMode = localStorage.getItem("darkMode");
@@ -24,7 +25,23 @@ export const App = () => {
       localStorage.setItem("darkMode", JSON.stringify(!prev));
       return !prev;
     });
+  };
+
+  const toggleShowAll = () => {
+    setShowAll(prev => !prev);
+    setActiveSection(null);
   }
+
+  // Cuando seleccionas una sección individual, oculta la vista "todo"
+  const onSelectSection = (id) => {
+    // Si haces click en la misma sección que ya está activa, la ocultamos
+    if (activeSection === id) {
+      setActiveSection(null);
+    } else {
+      setActiveSection(id);
+    }
+    setShowAll(false);
+  };
 
 
   const personalInfo = {
@@ -111,16 +128,27 @@ export const App = () => {
         </div>
 
         <Navigation
-          onSection={(id) => setActiveSection(id)}
-          activeSection={activeSection} />
+        onSection={onSelectSection}
+        activeSection={activeSection}
+      />
 
-        {sections[activeSection]}
+        <div className="viewall-button-container">
+          <button onClick={toggleShowAll} className="view-all-btn">
+            {showAll ? "Ocultar todo" : "Ver toda la información"}
+          </button>
+        </div>
 
-        <ViewAll 
-        experience={experienceData} 
-        education={educationData} 
-        skills={SkillsSection}
-        languages={languagesData} />
+        {/* Si showAll está activo, muestra todas las secciones */}
+        {showAll ? (
+          <ViewAll
+            experience={experienceData}
+            education={educationData}
+            languages={languagesData}
+          />
+        ) : (
+          // Si no, muestra la sección activa, o nada si no hay
+          activeSection && sections[activeSection]
+        )}
       </div>
     </>
   );
