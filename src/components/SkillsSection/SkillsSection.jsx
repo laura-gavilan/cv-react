@@ -30,7 +30,7 @@ export const SkillsSection = () => {
             </div>
 
             <div className="skills-category">
-                <h3>Frameworks / Librerías</h3>
+                <h3>Librerías</h3>
                 <div className="skills-row">
                     <div className="skill-card">
                         <img src={react} alt="React" />

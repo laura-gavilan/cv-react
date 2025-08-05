@@ -15,14 +15,8 @@ export const App = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [showAll, setShowAll] = useState(false);
 
-  // useEffect(() => {
-  //     const savedMode = localStorage.getItem("darkMode");
-  //     if (savedMode) setDarkMode(JSON.parse(savedMode));
-  // }, []);
-
   const toggleDarkMode = () => {
     setDarkMode(prev => !prev);
-      // localStorage.setItem("darkMode", JSON.stringify(!prev));
   };
 
   const toggleShowAll = () => {
@@ -30,9 +24,8 @@ export const App = () => {
     setActiveSection(null);
   }
 
-  // Cuando seleccionas una sección individual, oculta la vista "todo"
+
   const onSelectSection = (id) => {
-    // Si haces click en la misma sección que ya está activa, la ocultamos
     if (activeSection === id) {
       setActiveSection(null);
     } else {
@@ -44,7 +37,7 @@ export const App = () => {
 
   const personalInfo = {
     fullNme: "Laura Gavilán Sabiote",
-    position: "Desarrolladora Frontend",
+    position: "Frontend Developer",
     location: "Localización: Madrid",
     email: "Lauragavilansabiote@hotmail.com",
     phone: 649846617,
@@ -62,15 +55,15 @@ export const App = () => {
         "Evaluación integral con la persona y su entorno",
         "Planifaicación de intervenciones ocupacionales personalizadas",
         "Diseño y ejecución de itinerarios formativos y laborales",
-        "Colaboración activa en qeuipos multidisciplinares",
-        "Coordinación efectiva con empresas externas apra faciliar la reinserción laboral"
+        "Colaboración activa en equipos multidisciplinares",
+        "Coordinación efectiva con empresas externas para faciliar la reinserción laboral"
       ]
     },
 
     {
       title: "Terapeuta Ocupacional",
       period: "2015 - 2024",
-      company: "Recursos sociosanitarios (salud metnal y mayores)",
+      company: "Recursos sociosanitarios (salud mental y mayores)",
       organization: "Fundación Pilares, Grupo 5, Cruz Roja, Adespro, Stima, Fundación Sageco",
       responsabilities: [
         "Liderazgo y coordinación de equipos multidisciplinares",
@@ -84,6 +77,7 @@ export const App = () => {
 
   const educationData = {
     degree: "Máster en programación + Inteligencia Artificial",
+    institution: "Eleven Code School",
     modality: "Modalidad Aula Virtual",
     period: "Junio 2024 - Actualidad",
     details: [
@@ -136,7 +130,7 @@ export const App = () => {
           </button>
         </div>
 
-        {/* Si showAll está activo, muestra todas las secciones */}
+      
         {showAll ? (
           <ViewAll
             experience={experienceData}
@@ -144,7 +138,7 @@ export const App = () => {
             languages={languagesData}
           />
         ) : (
-          // Si no, muestra la sección activa, o nada si no hay
+          
           activeSection && sections[activeSection]
         )}
       </div>
