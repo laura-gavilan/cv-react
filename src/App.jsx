@@ -41,7 +41,7 @@ export const App = () => {
     location: "Localización: Madrid",
     email: "Lauragavilansabiote@hotmail.com",
     phone: 649846617,
-    summary: "Desarrolladora Frontend en formación con experiencia práctica en React, JavaScript, HTML y CSS. Tras años de trabajo en entornos multidisciplinares como Terapeuta Ocupacional, aporto una visión centrada en el usuario, habilidades de comunicación efectiva y enfoque en la accesibilidad web. Comprometida con la calidad del código y el aprendizaje continuo."
+    summary: "Desarrolladora Frontend con formación y experiencia en React, JavaScript, HTML y CSS. Tras años de trabajo en entornos multidisciplinares como Terapeuta Ocupacional, aporto una visión centrada en el usuario, habilidades de comunicación efectiva y enfoque en la accesibilidad web. Comprometida con la calidad del código y el aprendizaje continuo."
   };
 
 
